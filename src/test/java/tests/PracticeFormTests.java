@@ -1,5 +1,4 @@
 package tests;
-import java.io.File;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -19,7 +18,7 @@ public class PracticeFormTests {
 
     @Test
     void fillFormTest() {
-        File image = new File("C:\\Users\\AOvsyannikov\\IdeaProjects\\demoqa-practice-form\\src\\test\\java\\tests\\Capture.JPG");
+
         open("/automation-practice-form");
         $("#firstName").setValue("Alex");
         $("#lastName").setValue("Smith");
@@ -39,7 +38,7 @@ public class PracticeFormTests {
         $("#hobbies-checkbox-2+label").click();
         $("#hobbies-checkbox-3+label").click();
         $("#uploadPicture").scrollIntoView(true);
-        $("#uploadPicture").uploadFile(image);
+        $("#uploadPicture").uploadFromClasspath("Capture.JPG");
         $("#currentAddress").setValue("USA");
         $("#react-select-3-input").setValue("NCR").pressEnter();
         $("#react-select-4-input").setValue("Delhi").pressEnter();
